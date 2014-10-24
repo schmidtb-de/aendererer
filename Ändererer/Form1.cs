@@ -1,0 +1,156 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using System.IO;
+using System.Runtime.InteropServices;
+
+namespace Ändererer
+{
+    public partial class Form1 : Form
+    {
+        public Form1()
+        {
+            InitializeComponent();
+
+            
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            //Gibt mir alle Unterverzeichnisse zurück 
+
+            string[] strFolders = Directory.GetDirectories(Quellpfad.Text);
+
+            string strZielFolder = string.Empty;
+
+
+
+            /*DAS IST RICHTIG HIER*/
+
+            Directory.CreateDirectory(Zielpfad.Text);
+
+
+            //Durch alle Verzeichnisse laufen 
+
+            foreach (string strFolder in strFolders)
+            {
+
+                string[] strFiles = System.IO.Directory.GetFiles(strFolder);
+                string[] strEndungen = { "mpeg", "mpg", "mkv", "xvid", "mp4", "avi", "mka" };
+
+                
+                    if (chBUmbenennen.Checked == true)
+                    {
+
+                        foreach (string strFile in strFiles)
+                        {
+
+                        string Namealt = Path.GetFullPath(strFile);
+                        string Nameneu = Path.GetDirectoryName(strFile) + "\\" + Path.GetFileName(System.IO.Path.GetDirectoryName(strFile)) + Path.GetExtension(strFile);
+
+                        File.Move(Namealt, Nameneu);
+
+                    }
+                }
+
+                    string[] strFilesneu = System.IO.Directory.GetFiles(strFolder);
+                foreach (string strFile in strFilesneu)
+                {               
+
+                        if (chBNurVideo.Checked == true)
+                        {
+                            const int anzahl = 100;
+                            pb.Minimum = 0;
+                            pb.Maximum = anzahl;
+
+                            if (strEndungen.Any(Path.GetExtension(strFile).Contains))
+                            {
+                                string strZiel = Path.Combine(Zielpfad.Text, Path.GetFileName(strFile));
+                                if (File.Exists(strZiel))
+                                    File.Delete(strZiel);
+                                System.IO.File.Move(strFile, strZiel);
+
+                                for (int i = 1; i <= anzahl; i++) pb.Value = i;
+                            }
+                        }
+                        else
+                        {
+                            const int anzahl = 100;
+                            pb.Minimum = 0;
+                            pb.Maximum = anzahl;
+
+                            string strZiel = Path.Combine(Zielpfad.Text, Path.GetFileName(strFile));
+                            if (File.Exists(strZiel))
+                                File.Delete(strZiel);
+                            System.IO.File.Move(strFile, strZiel);
+
+                            for (int i = 1; i <= anzahl; i++) pb.Value = i;
+
+                        }
+
+                    }
+                }
+
+                if (chBUnterordnerlöschen.Checked == true)
+                {
+                    foreach (string strFolder in strFolders)
+                    {
+                        const int anzahl = 100;
+                        pblöschen.Minimum = 0;
+                        pblöschen.Maximum = anzahl;
+
+                        System.IO.Directory.Delete(strFolder, true);
+                        for (int i = 1; i <= anzahl; i++) pblöschen.Value = i;
+                    }
+                }
+
+            
+        }
+
+        private void btnQuell_Click(object sender, EventArgs e)
+        {
+            System.Windows.Forms.FolderBrowserDialog objDialog = new FolderBrowserDialog(); objDialog.Description = "Beschreibung";
+
+            objDialog.SelectedPath = @"C:\"; // Vorgabe Pfad (und danach der gewählte Pfad)  
+
+            DialogResult objResult = objDialog.ShowDialog(this);
+
+            if (objResult == DialogResult.OK) 
+                Quellpfad.Text = objDialog.SelectedPath;
+ 
+        }
+
+        private void btnZiel_Click(object sender, EventArgs e)
+        {
+            System.Windows.Forms.FolderBrowserDialog objDialog = new FolderBrowserDialog(); objDialog.Description = "Beschreibung";
+
+            objDialog.SelectedPath = @"C:\"; // Vorgabe Pfad (und danach der gewählte Pfad)  
+
+            DialogResult objResult = objDialog.ShowDialog(this);
+
+            if (objResult == DialogResult.OK)
+                Zielpfad.Text = objDialog.SelectedPath;
+
+        }
+
+        private void chB_ZQ_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chB_ZQ.Checked)
+            {
+                Zielpfad.Text = Quellpfad.Text;
+                Zielpfad.Enabled = false;
+            }
+            else
+            {
+                Zielpfad.Enabled = true;
+            }
+        }
+    }
+}
