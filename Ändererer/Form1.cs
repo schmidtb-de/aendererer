@@ -18,7 +18,9 @@ namespace Ändererer
         {
             InitializeComponent();
 
-            
+            Quellpfad.Text = Application.StartupPath;
+            Zielpfad.Text = Application.StartupPath;
+            btnZiel.Enabled = false;
 
         }
 
@@ -46,7 +48,7 @@ namespace Ändererer
                 string[] strEndungen = { "mpeg", "mpg", "mkv", "xvid", "mp4", "avi", "mka" };
 
                 
-                    if (chBUmbenennen.Checked == true)
+                    if (chBUmbenennen.Checked == true && chBNurVideo.Checked == false)
                     {
 
                         foreach (string strFile in strFiles)
@@ -59,7 +61,22 @@ namespace Ändererer
 
                     }
                 }
+                    if (chBUmbenennen.Checked == true && chBNurVideo.Checked == true)
+                    {
 
+                        foreach (string strFile in strFiles)
+                        {
+
+                            if (strEndungen.Any(Path.GetExtension(strFile).Contains))
+                            {
+                                string Namealt = Path.GetFullPath(strFile);
+                                string Nameneu = Path.GetDirectoryName(strFile) + "\\" + Path.GetFileName(System.IO.Path.GetDirectoryName(strFile)) + Path.GetExtension(strFile);
+
+                                File.Move(Namealt, Nameneu);
+
+                            }
+                        }
+                    }
                     string[] strFilesneu = System.IO.Directory.GetFiles(strFolder);
                 foreach (string strFile in strFilesneu)
                 {               
@@ -118,7 +135,7 @@ namespace Ändererer
         {
             System.Windows.Forms.FolderBrowserDialog objDialog = new FolderBrowserDialog(); objDialog.Description = "Beschreibung";
 
-            objDialog.SelectedPath = @"C:\"; // Vorgabe Pfad (und danach der gewählte Pfad)  
+            objDialog.SelectedPath = Application.StartupPath;  //@"C:\"; // Vorgabe Pfad (und danach der gewählte Pfad)  
 
             DialogResult objResult = objDialog.ShowDialog(this);
 
@@ -131,7 +148,7 @@ namespace Ändererer
         {
             System.Windows.Forms.FolderBrowserDialog objDialog = new FolderBrowserDialog(); objDialog.Description = "Beschreibung";
 
-            objDialog.SelectedPath = @"C:\"; // Vorgabe Pfad (und danach der gewählte Pfad)  
+            objDialog.SelectedPath = Application.StartupPath;  //@"C:\"; // Vorgabe Pfad (und danach der gewählte Pfad)  
 
             DialogResult objResult = objDialog.ShowDialog(this);
 
@@ -144,13 +161,42 @@ namespace Ändererer
         {
             if (chB_ZQ.Checked)
             {
-                Zielpfad.Text = Quellpfad.Text;
-                Zielpfad.Enabled = false;
+                Zielpfad.Enabled = true;
+                btnZiel.Enabled = true;
             }
             else
             {
-                Zielpfad.Enabled = true;
+                Zielpfad.Text = Quellpfad.Text;
+                Zielpfad.Enabled = false;
+                btnZiel.Enabled = false;
             }
+        }
+
+        private void Quellpfad_TextChanged(object sender, EventArgs e)
+        {
+            if (chB_ZQ.Checked)
+            {
+                Zielpfad.Enabled = true;
+                btnZiel.Enabled = true;
+            }
+            else
+            {
+                Zielpfad.Text = Quellpfad.Text;
+                Zielpfad.Enabled = false;
+                btnZiel.Enabled = false;
+            }
+            if (Quellpfad.Text == "" || Zielpfad.Text == "")
+                button1.Enabled = false;
+            else
+                button1.Enabled = true;
+            }
+
+        private void Zielpfad_TextChanged(object sender, EventArgs e)
+        {
+            if (Quellpfad.Text == "" || Zielpfad.Text == "")
+                button1.Enabled = false;
+            else
+                button1.Enabled = true;
         }
     }
 }

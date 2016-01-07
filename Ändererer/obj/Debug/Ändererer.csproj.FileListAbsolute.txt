@@ -7,3 +7,21 @@ C:\Users\Benjamin\documents\visual studio 2012\Projects\Ändererer\Ändererer\ob
 C:\Users\Benjamin\documents\visual studio 2012\Projects\Ändererer\Ändererer\obj\Debug\Ändererer.csproj.GenerateResource.Cache
 C:\Users\Benjamin\documents\visual studio 2012\Projects\Ändererer\Ändererer\obj\Debug\Ändererer.exe
 C:\Users\Benjamin\documents\visual studio 2012\Projects\Ändererer\Ändererer\obj\Debug\Ändererer.pdb
+C:\Users\Steinar88\Documents\Visual Studio 2012\Projects\Ändererer\Ändererer\bin\Debug\Ändererer.exe.config
+C:\Users\Steinar88\Documents\Visual Studio 2012\Projects\Ändererer\Ändererer\obj\Debug\Ändererer.exe
+C:\Users\Steinar88\Documents\Visual Studio 2012\Projects\Ändererer\Ändererer\obj\Debug\Ändererer.pdb
+C:\Users\Steinar88\Documents\Visual Studio 2012\Projects\Ändererer\Ändererer\bin\Debug\Ändererer.exe
+C:\Users\Steinar88\Documents\Visual Studio 2012\Projects\Ändererer\Ändererer\bin\Debug\Ändererer.pdb
+C:\Users\Steinar88\Documents\Visual Studio 2012\Projects\Ändererer\Ändererer\obj\Debug\Ändererer.csprojResolveAssemblyReference.cache
+C:\Users\Steinar88\Documents\Visual Studio 2012\Projects\Ändererer\Ändererer\obj\Debug\Ändererer.Form1.resources
+C:\Users\Steinar88\Documents\Visual Studio 2012\Projects\Ändererer\Ändererer\obj\Debug\Ändererer.Properties.Resources.resources
+C:\Users\Steinar88\Documents\Visual Studio 2012\Projects\Ändererer\Ändererer\obj\Debug\Ändererer.csproj.GenerateResource.Cache
+C:\Users\Benjamin\SkyDrive\Projects\Ändererer\Ändererer\bin\Debug\Ändererer.exe.config
+C:\Users\Benjamin\SkyDrive\Projects\Ändererer\Ändererer\obj\Debug\Ändererer.exe
+C:\Users\Benjamin\SkyDrive\Projects\Ändererer\Ändererer\obj\Debug\Ändererer.pdb
+C:\Users\Benjamin\SkyDrive\Projects\Ändererer\Ändererer\bin\Debug\Ändererer.exe
+C:\Users\Benjamin\SkyDrive\Projects\Ändererer\Ändererer\bin\Debug\Ändererer.pdb
+C:\Users\Benjamin\SkyDrive\Projects\Ändererer\Ändererer\obj\Debug\Ändererer.csprojResolveAssemblyReference.cache
+C:\Users\Benjamin\SkyDrive\Projects\Ändererer\Ändererer\obj\Debug\Ändererer.Form1.resources
+C:\Users\Benjamin\SkyDrive\Projects\Ändererer\Ändererer\obj\Debug\Ändererer.Properties.Resources.resources
+C:\Users\Benjamin\SkyDrive\Projects\Ändererer\Ändererer\obj\Debug\Ändererer.csproj.GenerateResource.Cache
