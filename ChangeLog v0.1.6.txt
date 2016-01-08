@@ -1,0 +1,16 @@
+///////////v0.1.6
+
+### Entfernt automatisch bisher folgende Wörter aus der umbennanten Datei:
+
+{                   "GERMAN", "German", "DUBBED", "Dubbed", "UNCUT",
+                    "BDRip", "720p", "1080p", "HDTV", "XviD",
+                    "WebRip", "x264", "DL", "WEBRip", "BluRay" }
+
+///////////v0.1.5
+
+### Link einfügen Maus-only freundlicher gestaltet
+
+///////////v0.1.4
+
+### SelectAll durch Doppelklick
+### Ersetzt beim Umbenennen alle Punkte automatisch durch Leerzeichen

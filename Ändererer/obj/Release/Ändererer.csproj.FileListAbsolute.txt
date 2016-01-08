@@ -1,0 +1,11 @@
+C:\Users\Benjamin\Documents\Visual Studio 2015\Projects\Ändererer\Ändererer\bin\Release\Ändererer.exe.config
+C:\Users\Benjamin\Documents\Visual Studio 2015\Projects\Ändererer\Ändererer\bin\Release\Ändererer.exe
+C:\Users\Benjamin\Documents\Visual Studio 2015\Projects\Ändererer\Ändererer\bin\Release\Ändererer.pdb
+C:\Users\Benjamin\Documents\Visual Studio 2015\Projects\Ändererer\Ändererer\bin\Release\AlphaFS.dll
+C:\Users\Benjamin\Documents\Visual Studio 2015\Projects\Ändererer\Ändererer\bin\Release\AlphaFS.pdb
+C:\Users\Benjamin\Documents\Visual Studio 2015\Projects\Ändererer\Ändererer\bin\Release\AlphaFS.xml
+C:\Users\Benjamin\Documents\Visual Studio 2015\Projects\Ändererer\Ändererer\obj\Release\Ändererer.Form1.resources
+C:\Users\Benjamin\Documents\Visual Studio 2015\Projects\Ändererer\Ändererer\obj\Release\Ändererer.Properties.Resources.resources
+C:\Users\Benjamin\Documents\Visual Studio 2015\Projects\Ändererer\Ändererer\obj\Release\Ändererer.csproj.GenerateResource.Cache
+C:\Users\Benjamin\Documents\Visual Studio 2015\Projects\Ändererer\Ändererer\obj\Release\Ändererer.exe
+C:\Users\Benjamin\Documents\Visual Studio 2015\Projects\Ändererer\Ändererer\obj\Release\Ändererer.pdb

@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 using System.Runtime.InteropServices;
-//using Alphaleonis.Win32.Filesystem;
+using System.Text.RegularExpressions;
 
 
 namespace Ändererer
@@ -24,6 +24,12 @@ namespace Ändererer
             Zielpfad.Text = Application.StartupPath;
             btnZiel.Enabled = false;
 
+        }
+
+        private string ReplaceWholeWord(string originalText, string wordToReplace, string replacement)
+        {
+            var pattern = String.Format(@"\b{0}\b", wordToReplace);
+            return Regex.Replace(originalText, pattern, replacement, RegexOptions.None);
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -48,6 +54,11 @@ namespace Ändererer
 
                 string[] strFiles = System.IO.Directory.GetFiles(strFolder);
                 string[] strEndungen = { "mpeg", "mpg", "mkv", "xvid", "mp4", "avi", "mka" };
+                string[] strZuEntfernen = {
+                    "GERMAN", "German", "DUBBED", "Dubbed", "UNCUT",
+                    "BDRip", "720p", "1080p", "HDTV", "XviD",
+                    "WebRip", "x264", "DL", "WEBRip", "BluRay" };
+
                 //const int MaxLength = 240;
 
                 
@@ -58,11 +69,11 @@ namespace Ändererer
                         {
 
                         string Namealt = Path.GetFullPath(strFile);
-                        string DateiNameLaenge = (Path.GetFileName(System.IO.Path.GetDirectoryName(strFile))).Replace('.', ' ');
-                        //if (DateiNameLaenge.Length > MaxLength)
-                        //{
-                        //    DateiNameLaenge.Substring(0, MaxLength);
-                        //}
+                        //string DateiNameLaenge = (Path.GetFileName(System.IO.Path.GetDirectoryName(strFile))).Replace('.', ' ');
+                        string DateiNameLaenge = (Path.GetFileName(System.IO.Path.GetDirectoryName(strFile)));
+                        for (int i=0; i<strZuEntfernen.Length; i++)
+                        DateiNameLaenge = ReplaceWholeWord(ReplaceWholeWord(DateiNameLaenge, strZuEntfernen[i], "").Replace('.', ' '), "  ", " ");
+
                         string Nameneu = Path.GetDirectoryName(strFile) + "\\" + DateiNameLaenge + Path.GetExtension(strFile);
 
 
