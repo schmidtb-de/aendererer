@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 using System.Runtime.InteropServices;
+//using Alphaleonis.Win32.Filesystem;
+
 
 namespace Ändererer
 {
@@ -46,7 +48,7 @@ namespace Ändererer
 
                 string[] strFiles = System.IO.Directory.GetFiles(strFolder);
                 string[] strEndungen = { "mpeg", "mpg", "mkv", "xvid", "mp4", "avi", "mka" };
-                //const int MaxLength = 247;
+                //const int MaxLength = 240;
 
                 
                     if (chBUmbenennen.Checked == true && chBNurVideo.Checked == false)
@@ -56,12 +58,13 @@ namespace Ändererer
                         {
 
                         string Namealt = Path.GetFullPath(strFile);
-                        string Nameneu = Path.GetDirectoryName(strFile) + "\\" + (Path.GetFileName(System.IO.Path.GetDirectoryName(strFile))).Replace('.', ' ') + Path.GetExtension(strFile);
-
-                        //if (Nameneu.Length > MaxLength)
+                        string DateiNameLaenge = (Path.GetFileName(System.IO.Path.GetDirectoryName(strFile))).Replace('.', ' ');
+                        //if (DateiNameLaenge.Length > MaxLength)
                         //{
-                        //    Nameneu = Nameneu.Substring(0, MaxLength);
+                        //    DateiNameLaenge.Substring(0, MaxLength);
                         //}
+                        string Nameneu = Path.GetDirectoryName(strFile) + "\\" + DateiNameLaenge + Path.GetExtension(strFile);
+
 
                         File.Move(Namealt, Nameneu);
 
@@ -213,6 +216,14 @@ namespace Ändererer
         private void Zielpfad_DoubleClick(object sender, EventArgs e)
         {
             this.Quellpfad.SelectAll();
+        }
+
+        private void btnStrgV_Click(object sender, EventArgs e)
+        {
+            if(Clipboard.ContainsText())
+            {
+                Quellpfad.Text = Clipboard.GetText();
+            }
         }
     }
 }

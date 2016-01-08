@@ -45,12 +45,13 @@
             this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
             this.pblöschen = new System.Windows.Forms.ToolStripProgressBar();
             this.chBUmbenennen = new System.Windows.Forms.CheckBox();
+            this.btnStrgV = new System.Windows.Forms.Button();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(146, 192);
+            this.button1.Location = new System.Drawing.Point(146, 198);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 0;
@@ -61,7 +62,7 @@
             // Zielpfad
             // 
             this.Zielpfad.AllowDrop = true;
-            this.Zielpfad.Location = new System.Drawing.Point(12, 70);
+            this.Zielpfad.Location = new System.Drawing.Point(12, 76);
             this.Zielpfad.Name = "Zielpfad";
             this.Zielpfad.Size = new System.Drawing.Size(322, 20);
             this.Zielpfad.TabIndex = 1;
@@ -71,7 +72,7 @@
             // Quellpfad
             // 
             this.Quellpfad.AllowDrop = true;
-            this.Quellpfad.Location = new System.Drawing.Point(12, 29);
+            this.Quellpfad.Location = new System.Drawing.Point(12, 35);
             this.Quellpfad.Name = "Quellpfad";
             this.Quellpfad.Size = new System.Drawing.Size(322, 20);
             this.Quellpfad.TabIndex = 2;
@@ -81,7 +82,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(158, 13);
+            this.label1.Location = new System.Drawing.Point(158, 19);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(52, 13);
             this.label1.TabIndex = 3;
@@ -90,7 +91,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(161, 56);
+            this.label2.Location = new System.Drawing.Point(161, 62);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(45, 13);
             this.label2.TabIndex = 4;
@@ -99,14 +100,14 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(275, 106);
+            this.label3.Location = new System.Drawing.Point(275, 112);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(0, 13);
             this.label3.TabIndex = 5;
             // 
             // btnQuell
             // 
-            this.btnQuell.Location = new System.Drawing.Point(340, 27);
+            this.btnQuell.Location = new System.Drawing.Point(340, 33);
             this.btnQuell.Name = "btnQuell";
             this.btnQuell.Size = new System.Drawing.Size(29, 23);
             this.btnQuell.TabIndex = 6;
@@ -116,7 +117,7 @@
             // 
             // btnZiel
             // 
-            this.btnZiel.Location = new System.Drawing.Point(340, 67);
+            this.btnZiel.Location = new System.Drawing.Point(340, 73);
             this.btnZiel.Name = "btnZiel";
             this.btnZiel.Size = new System.Drawing.Size(29, 23);
             this.btnZiel.TabIndex = 7;
@@ -127,7 +128,7 @@
             // chB_ZQ
             // 
             this.chB_ZQ.AutoSize = true;
-            this.chB_ZQ.Location = new System.Drawing.Point(12, 102);
+            this.chB_ZQ.Location = new System.Drawing.Point(12, 108);
             this.chB_ZQ.Name = "chB_ZQ";
             this.chB_ZQ.Size = new System.Drawing.Size(151, 17);
             this.chB_ZQ.TabIndex = 8;
@@ -140,7 +141,7 @@
             this.chBNurVideo.AutoSize = true;
             this.chBNurVideo.Checked = true;
             this.chBNurVideo.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chBNurVideo.Location = new System.Drawing.Point(12, 125);
+            this.chBNurVideo.Location = new System.Drawing.Point(12, 131);
             this.chBNurVideo.Name = "chBNurVideo";
             this.chBNurVideo.Size = new System.Drawing.Size(368, 17);
             this.chBNurVideo.TabIndex = 9;
@@ -152,7 +153,7 @@
             this.chBUnterordnerlöschen.AutoSize = true;
             this.chBUnterordnerlöschen.Checked = true;
             this.chBUnterordnerlöschen.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chBUnterordnerlöschen.Location = new System.Drawing.Point(12, 148);
+            this.chBUnterordnerlöschen.Location = new System.Drawing.Point(12, 154);
             this.chBUnterordnerlöschen.Name = "chBUnterordnerlöschen";
             this.chBUnterordnerlöschen.Size = new System.Drawing.Size(301, 17);
             this.chBUnterordnerlöschen.TabIndex = 10;
@@ -199,18 +200,29 @@
             this.chBUmbenennen.AutoSize = true;
             this.chBUmbenennen.Checked = true;
             this.chBUmbenennen.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chBUmbenennen.Location = new System.Drawing.Point(12, 172);
+            this.chBUmbenennen.Location = new System.Drawing.Point(12, 178);
             this.chBUmbenennen.Name = "chBUmbenennen";
             this.chBUmbenennen.Size = new System.Drawing.Size(357, 17);
             this.chBUmbenennen.TabIndex = 12;
             this.chBUmbenennen.Text = "Extrahierte Dateinamen den Ordnernamen entsprechend umbenennen";
             this.chBUmbenennen.UseVisualStyleBackColor = true;
             // 
+            // btnStrgV
+            // 
+            this.btnStrgV.Location = new System.Drawing.Point(12, 6);
+            this.btnStrgV.Name = "btnStrgV";
+            this.btnStrgV.Size = new System.Drawing.Size(48, 23);
+            this.btnStrgV.TabIndex = 13;
+            this.btnStrgV.Text = "Strg+V";
+            this.btnStrgV.UseVisualStyleBackColor = true;
+            this.btnStrgV.Click += new System.EventHandler(this.btnStrgV_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(392, 259);
+            this.Controls.Add(this.btnStrgV);
             this.Controls.Add(this.chBUmbenennen);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.chBUnterordnerlöschen);
@@ -252,7 +264,7 @@
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel2;
         private System.Windows.Forms.ToolStripProgressBar pblöschen;
         private System.Windows.Forms.CheckBox chBUmbenennen;
-
+        private System.Windows.Forms.Button btnStrgV;
     }
 }
 
