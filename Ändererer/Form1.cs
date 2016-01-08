@@ -46,6 +46,7 @@ namespace Ändererer
 
                 string[] strFiles = System.IO.Directory.GetFiles(strFolder);
                 string[] strEndungen = { "mpeg", "mpg", "mkv", "xvid", "mp4", "avi", "mka" };
+                //const int MaxLength = 247;
 
                 
                     if (chBUmbenennen.Checked == true && chBNurVideo.Checked == false)
@@ -55,7 +56,12 @@ namespace Ändererer
                         {
 
                         string Namealt = Path.GetFullPath(strFile);
-                        string Nameneu = Path.GetDirectoryName(strFile) + "\\" + Path.GetFileName(System.IO.Path.GetDirectoryName(strFile)) + Path.GetExtension(strFile);
+                        string Nameneu = Path.GetDirectoryName(strFile) + "\\" + (Path.GetFileName(System.IO.Path.GetDirectoryName(strFile))).Replace('.', ' ') + Path.GetExtension(strFile);
+
+                        //if (Nameneu.Length > MaxLength)
+                        //{
+                        //    Nameneu = Nameneu.Substring(0, MaxLength);
+                        //}
 
                         File.Move(Namealt, Nameneu);
 
@@ -70,7 +76,7 @@ namespace Ändererer
                             if (strEndungen.Any(Path.GetExtension(strFile).Contains))
                             {
                                 string Namealt = Path.GetFullPath(strFile);
-                                string Nameneu = Path.GetDirectoryName(strFile) + "\\" + Path.GetFileName(System.IO.Path.GetDirectoryName(strFile)) + Path.GetExtension(strFile);
+                                string Nameneu = Path.GetDirectoryName(strFile) + "\\" + (Path.GetFileName(System.IO.Path.GetDirectoryName(strFile))).Replace('.', ' ') + Path.GetExtension(strFile);
 
                                 File.Move(Namealt, Nameneu);
 
@@ -197,6 +203,16 @@ namespace Ändererer
                 button1.Enabled = false;
             else
                 button1.Enabled = true;
+        }
+
+        private void Quellpfad_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            this.Quellpfad.SelectAll();
+        }
+
+        private void Zielpfad_DoubleClick(object sender, EventArgs e)
+        {
+            this.Quellpfad.SelectAll();
         }
     }
 }
