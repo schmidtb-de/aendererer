@@ -237,7 +237,7 @@
             this.Controls.Add(this.Zielpfad);
             this.Controls.Add(this.button1);
             this.Name = "Form1";
-            this.Text = "Ändererer v0.1.4 - BETA";
+            this.Text = "Ändererer v0.1.6 - BETA";
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
