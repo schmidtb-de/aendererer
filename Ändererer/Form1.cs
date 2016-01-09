@@ -69,10 +69,10 @@ namespace Ändererer
                         {
 
                         string Namealt = Path.GetFullPath(strFile);
-                        //string DateiNameLaenge = (Path.GetFileName(System.IO.Path.GetDirectoryName(strFile))).Replace('.', ' ');
                         string DateiNameLaenge = (Path.GetFileName(System.IO.Path.GetDirectoryName(strFile)));
-                        for (int i=0; i<strZuEntfernen.Length; i++)
-                        DateiNameLaenge = ReplaceWholeWord(ReplaceWholeWord(DateiNameLaenge, strZuEntfernen[i], "").Replace('.', ' '), "  ", " ");
+                        //string DateiNameLaenge = (Path.GetFileName(System.IO.Path.GetDirectoryName(strFile)));
+                        //for (int i=0; i<strZuEntfernen.Length; i++)
+                        //DateiNameLaenge = ReplaceWholeWord(ReplaceWholeWord(DateiNameLaenge, strZuEntfernen[i], "").Replace('.', ' '), "  ", " ");
 
                         string Nameneu = Path.GetDirectoryName(strFile) + "\\" + DateiNameLaenge + Path.GetExtension(strFile);
 
@@ -90,9 +90,14 @@ namespace Ändererer
                             if (strEndungen.Any(Path.GetExtension(strFile).Contains))
                             {
                                 string Namealt = Path.GetFullPath(strFile);
-                                string Nameneu = Path.GetDirectoryName(strFile) + "\\" + (Path.GetFileName(System.IO.Path.GetDirectoryName(strFile))).Replace('.', ' ') + Path.GetExtension(strFile);
+                                string DateiNameLaenge = (Path.GetFileName(System.IO.Path.GetDirectoryName(strFile)));
+                                for (int i = 0; i < strZuEntfernen.Length; i++)
+                                DateiNameLaenge = ReplaceWholeWord(ReplaceWholeWord(DateiNameLaenge, strZuEntfernen[i], "").Replace('.', ' '), "  ", " ");
 
-                                File.Move(Namealt, Nameneu);
+                            string Nameneu = Path.GetDirectoryName(strFile) + "\\" + DateiNameLaenge + Path.GetExtension(strFile);
+                            //string Nameneu = Path.GetDirectoryName(strFile) + "\\" + (Path.GetFileName(System.IO.Path.GetDirectoryName(strFile))).Replace('.', ' ') + Path.GetExtension(strFile);
+
+                            File.Move(Namealt, Nameneu);
 
                             }
                         }
