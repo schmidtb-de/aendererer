@@ -58,11 +58,14 @@ namespace Ändererer
                     "GERMAN", "German", "DUBBED", "Dubbed", "UNCUT",
                     "BDRip", "720p", "1080p", "HDTV", "XviD",
                     "WebRip", "x264", "DL", "WEBRip", "BluRay" };
+                long length = 0;
+                string[] strFilesEinzeln = { "0" };
+                string[] strFilesneu = { "0" };
 
                 //const int MaxLength = 240;
 
-                
-                    if (chBUmbenennen.Checked == true && chBNurVideo.Checked == false)
+
+                if (chBUmbenennen.Checked == true && chBNurVideo.Checked == false)
                     {
 
                         foreach (string strFile in strFiles)
@@ -83,8 +86,22 @@ namespace Ändererer
                 }
                     if (chBUmbenennen.Checked == true && chBNurVideo.Checked == true)
                     {
+                        if (strFiles.Length > 1)
+                    {
+                        for (int a=0; a < strFiles.Length; a++)
+                        {
+                            long length2 = new System.IO.FileInfo(Path.GetFullPath(strFiles[a])).Length;
+                            if (length2 > length)
+                            {
+                                length = new System.IO.FileInfo(Path.GetFullPath(strFiles[a])).Length;
+                                strFilesEinzeln[0] = strFiles[a];
+                            }
+                            //else
+                                //Array.Clear(strFiles, a, 1);
+                        }
 
-                        foreach (string strFile in strFiles)
+                    }
+                        foreach (string strFile in strFilesEinzeln)
                         {
 
                             if (strEndungen.Any(Path.GetExtension(strFile).Contains))
@@ -98,11 +115,14 @@ namespace Ändererer
                             //string Nameneu = Path.GetDirectoryName(strFile) + "\\" + (Path.GetFileName(System.IO.Path.GetDirectoryName(strFile))).Replace('.', ' ') + Path.GetExtension(strFile);
 
                             File.Move(Namealt, Nameneu);
+                            strFilesneu[0] = Nameneu;
 
                             }
                         }
                     }
-                    string[] strFilesneu = System.IO.Directory.GetFiles(strFolder);
+
+                if (!chBNurVideo.Checked)
+                    strFilesneu = System.IO.Directory.GetFiles(strFolder);
                 foreach (string strFile in strFilesneu)
                 {               
 

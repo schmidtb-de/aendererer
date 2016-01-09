@@ -1,3 +1,7 @@
+///////////v0.1.7
+
+### Kopiert nun im "nur Video Dateien"-Modus nur noch die größte Datei 
+
 ///////////v0.1.6
 
 ### Entfernt automatisch bisher folgende Wörter aus der umbennanten Datei:
